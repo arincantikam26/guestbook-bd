@@ -19,4 +19,4 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [GuestController::class, 'index'])->name('home');
-
+Route::post('/room-choice', [GuestController::class, 'store'])->name('room-choice');
