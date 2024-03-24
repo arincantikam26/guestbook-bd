@@ -15,12 +15,11 @@ class AdminSeeder extends Seeder
     {
         $data = [
             'name' => 'admin',
-            'username' => 'admin',
             'email' => 'admin@gmail.com',
             'email_verified_at' => now(),
             'password' => bcrypt('12345678')
         ];
-        
+
         User::insert($data);
     }
 }
