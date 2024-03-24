@@ -1,0 +1,149 @@
+:root {
+    --blue: #4682A9;
+    --red: #FF865E;
+    --white: #FEF9EF;
+    --yellow: #FEE440;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+body {
+    background-color: var(--white);
+    font-family: "Poppins", sans-serif;
+}
+
+body a {
+    text-decoration: none;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.navbar-container a {
+    font-size: 1.2em;
+}
+
+.logo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.logo img {
+    width: 100%;
+    max-width: 50px;
+}
+
+.navbar .navbar-nav {
+    gap: 50px;
+}
+
+footer {
+    background-color: black;
+    text-align: center;
+    color: var(--white);
+    padding: 15px;
+    margin-top: 60px;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 60px;
+}
+
+.left-hero p  {
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+.btn-primary {
+    background-color: var(--blue) !important;
+    /* color: black !important; */
+}
+
+.right-hero img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+}
+
+.room {
+    margin-top: 80px;
+}
+
+.room h2 {
+    text-align: center;
+}
+
+.room .title {
+    color: var(--blue);
+}
+
+.room .event {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.room .collapse {
+    text-align: justify;
+}
+
+.room .carousel {
+    margin-top: 30px;
+}
+
+.room .btnCarouselRoom {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding-top: 20px;
+}
+.room .card {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.room .description {
+    color: var(--blue);
+}
+
+.room .card img {
+    border-radius: 10px;
+}
+
+.room .roomTitle {
+    color: var(--red);
+    font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+    .logo h1{
+      font-size: 1em;
+    
+    }
+    
+    .logo img {
+       max-width: 50px;
+    }
+
+    .navbar-container a {
+        text-decoration: none;
+        font-size: 1em;
+    }
+}
