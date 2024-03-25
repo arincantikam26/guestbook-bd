@@ -15,6 +15,7 @@ use Exception;
 class GuestController extends Controller
 {
     public function index() {
+
         $data = Room::all();
 
         return view('index', [
