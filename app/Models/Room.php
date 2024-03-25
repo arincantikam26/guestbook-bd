@@ -12,6 +12,15 @@ class Room extends Model
     protected $table = 'rooms';
     protected $guarded = ['id'];
 
+    protected static function booted()
+    {
+        static::updating(function ($room) {
+            if ($room->isDirty('status') && $room->status === false) {
+                $room->room()->update(['status' => false]);
+            }
+        });
+    }
+
     public function room() {
         return $this->hasMany(Guest::class);
     }

@@ -16,21 +16,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+
     @include('partials.header')
     <main>
       <div class="container">
         <section class="msg mt-3">
-          @if (session('success'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-              {{ session('success') }}
-              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-          @elseif (session('error'))
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-              {{ session('error') }}
-              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
             </div>
           @endif
+          @include('sweetalert::alert')
         </section>
         
         <section class="hero">
@@ -61,7 +61,7 @@
                         @foreach($chunk as $item)
                             <div class="col-lg-4">
                               <div class="card">
-                                <img src="{{ asset('assets/image/' . $item->image) }}" class="card-img-top" alt="image">
+                                <img src="{{ Storage::url($item->image) }}" class="card-img-top" alt="image">
                                 <div class="card-body">
                                     <h5 class="card-title mb-3">{{ $item->name }}</h5>
             

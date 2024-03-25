@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('image');
             $table->integer('kouta');
             $table->dateTime('available_date');
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }

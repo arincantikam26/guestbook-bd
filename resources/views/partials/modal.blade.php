@@ -12,7 +12,7 @@
             <form action="{{ route('room-choice') }}" method="post">
                 @csrf
                 <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-                <div class="form-floating mb-3">
+                  <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="name" name="name" placeholder="Nama Lengkap" required>
                     <label for="name">Nama</label>
                   </div>
